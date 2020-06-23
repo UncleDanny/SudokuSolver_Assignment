@@ -1,16 +1,7 @@
-﻿using SudokuSolver.Models;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Web;
-
-namespace SudokuSolver.Logics
+﻿namespace SudokuSolver.Logics
 {
     public class Solver
     {
-
         public int[][] Solve(int[][] sudoku)
         {
             return sudoku;
@@ -18,7 +9,9 @@ namespace SudokuSolver.Logics
 
         public int[][] SolveGuessing(int[][] sudoku)
         {
-            return sudoku;
+            CSPSolver cspSolver = new CSPSolver(sudoku);
+            cspSolver.Solve();
+            return cspSolver.Board;
         }
 
         public int[][] Create(int[][] sudoku)
