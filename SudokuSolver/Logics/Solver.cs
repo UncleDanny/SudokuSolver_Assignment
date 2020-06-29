@@ -13,7 +13,12 @@ namespace SudokuSolver.Logics
 
         public int[][] Solve(int[][] sudoku)
         {
-            return sudoku;
+            LogicalSolver solver = new LogicalSolver( sudoku );
+            solver.Solve();
+
+            Debug.Assert( solver.IsCorrect() );
+
+            return solver.ExportSolution();
         }
 
         public int[][] SolveGuessing(int[][] sudoku)
