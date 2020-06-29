@@ -16,7 +16,9 @@
 
         public int[][] Create(int[][] sudoku)
         {
-            return sudoku;
+            CreateRandomBoard cRandom = new CreateRandomBoard(sudoku);
+            cRandom.GenerateRandomBoard();
+            return cRandom.Board;
         }
     }
 }
