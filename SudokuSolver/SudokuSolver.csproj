@@ -151,15 +151,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Logics\LogicalSolver.cs" />
-    <Compile Include="Logics\LogicalSolver.Field.cs" />
+    <Compile Include="Logics\CreateRandomBoard.cs" />
+    <Compile Include="Logics\CSPSolver.cs" />
     <Compile Include="Logics\Solver.cs" />
-    <Compile Include="Logics\Solvers\NakedSubsetTechnique.cs" />
-    <Compile Include="Logics\Solvers\HiddenSubsetTechnique.cs" />
-    <Compile Include="Logics\Solvers\SingleOptionTechnique.cs" />
-    <Compile Include="Logics\Solvers\SquareRowInteractionTechnique.cs" />
-    <Compile Include="Logics\Solvers\TwoDirectionTechnique.cs" />
-    <Compile Include="Logics\Solvers\SolverTechnique.cs" />
     <Compile Include="Models\Sudoku.cs" />
     <Compile Include="Models\SudokuModel.cs" />
     <Compile Include="Models\Sudokus.cs" />

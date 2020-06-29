@@ -1,18 +1,16 @@
 ﻿using SudokuSolver.Logics;
 using SudokuSolver.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace SudokuSolver.Controllers
 {
     public class SudokuController : Controller
     {
-        private Solver solver = new Solver();
+        private readonly Solver solver = new Solver();
         private SudokuModel sudokuModel = new SudokuModel();
-        private IEnumerable<Sudoku> SudokuList = Sudokus.MockData();
+        private readonly IEnumerable<Sudoku> SudokuList = Sudokus.MockData();
 
         // GET: Sudoku
         public ActionResult Sudoku()
@@ -65,9 +63,11 @@ namespace SudokuSolver.Controllers
         {
             int sudokuNumber = id ?? 0;
 
-            var model = new SudokuModel();
-            model.Cells = SudokuList.ElementAt(sudokuNumber).Cells;
-            model.SudokuId = sudokuNumber;
+            var model = new SudokuModel
+            {
+                Cells = SudokuList.ElementAt(sudokuNumber).Cells,
+                SudokuId = sudokuNumber
+            };
             TempData["sudoku"] = model;
 
             return RedirectToAction("Sudoku");
